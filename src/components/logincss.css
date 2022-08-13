@@ -1,0 +1,111 @@
+.inp{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;   
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+.clientLoginTitle{
+    /* background-color: #9dcff6; */
+    margin-left: 13px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.formBody{
+    /* background-color: red; */
+    
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    width: 60%;
+    /* height: 40%; */
+    /* margin-left: 30px; */
+}
+
+.loginForm{
+    /* background-color: #9dcff6; */
+    /* display: flex; */
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.loginBtn{
+    margin: auto;
+    margin-top: 20px;
+    font-size: 18px !important;
+    background-color: #9dcff6;
+    width: 8vw !important;
+    font-weight: 400;
+    color: white;
+    border: 3px solid #9dcff6;
+    border-radius: 5px;
+    padding: 5px !important;
+}
+
+.loginBtn:hover {
+    color: #7255e8;
+    background-color: white;
+    /* border:none; */
+  }
+
+  .signupBtn{
+    margin: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #68e5b2;
+    width: 40%;
+    font-weight: 400;
+    color: white;
+    border: 3px solid #68e5b2;
+    padding: 5px;
+}
+
+  .signupBtn:hover {
+    color: #68e5b2;
+    background-color: white;
+    /* border:none; */
+  }
+
+  .dont{
+    margin-top: 20px;
+    font-size: 18px;
+}
+.donts{
+    text-decoration: none;
+}
+
+.imgStyle{
+    border-radius: 50%;
+}
+
+.updateNameBtn{
+    margin: auto;
+    margin-top: 5px;
+    font-size: 15px;
+    background-color: #68e5b2;
+    width: 20%;
+    font-weight: 200;
+    color: white;
+    border: 3px solid #68e5b2;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.editinp{
+    width: 70%;
+    margin-right: 5%;
+}
+
+.homecont{
+    margin-top: -10%;
+}
