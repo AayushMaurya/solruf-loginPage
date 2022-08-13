@@ -63,6 +63,7 @@ const Login = () => {
               onChange={changeHandler}
               value={loginInfo.email}
               placeholder="Email"
+              required
             />
             <br />
             <input
@@ -72,6 +73,7 @@ const Login = () => {
               onChange={changeHandler}
               value={loginInfo.password}
               placeholder="Password"
+              required
             />
             <div className="row">
               {!isLoading && (

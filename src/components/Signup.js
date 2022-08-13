@@ -47,6 +47,7 @@ const Signup = () => {
             })
             .catch((err) => {
                 console.log(err);
+                alert(err);
                 setIsLoading(false);
             });
 
