@@ -1,53 +1,55 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {auth} from "../firebase";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./logincss.css";
 
 const Login = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const [loginInfo, setLoginInfo] = useState({
-        email: "",
-        password: ""
+  const [loginInfo, setLoginInfo] = useState({
+    email: "",
+    password: ""
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const changeHandler = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    setLoginInfo({
+      ...loginInfo, [name]: value
     });
+  }
 
-    const [isLoading, setIsLoading] = useState(false);
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    console.log("submition is under process");
+    console.log(loginInfo);
 
-    const changeHandler = (e) => {
-        let name = e.target.name;
-        let value = e.target.value;
+    signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
+      .then((user) => {
+        console.log("user logged in");
+        console.log(user);
 
-        setLoginInfo({
-            ...loginInfo, [name]: value
-        });
-    }
+        navigate("/");
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-        console.log("submition is under process");
-        console.log(loginInfo);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
 
-        signInWithEmailAndPassword(auth, loginInfo.email, loginInfo.password)
-        .then((user) => {
-            console.log("user logged in");
-            console.log(user);
+        setIsLoading(false);
+      });
+  }
 
-            navigate("/");
-
-        })
-        .catch((err) =>{
-            console.log(err);
-        });
-
-        setIsLoading(true);
-    }
-
-    return (
-        <div>
-            <div className="container loginForm">
+  return (
+    <div>
+      <div className="container loginForm">
         <div className="row formBody">
           <div className="row">
             <h3 className="clientLoginTitle">Client Login</h3>
@@ -89,8 +91,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Login;
